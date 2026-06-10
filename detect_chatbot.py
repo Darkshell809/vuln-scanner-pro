@@ -46,9 +46,6 @@ SIGNATURES = {
         "scripts": ["client.crisp.chat"],
         "globals": ["$crisp"]
     },
-    "Amazon Lex / Allstate Custom": {
-        "scripts": ["virtualassistant.allstate.com", "amazonChatBotScriptSrc"],
-    },
     "Genesys": {
         "scripts": ["genesys.com/widgets", "_genesys"],
         "globals": ["_genesys"]
@@ -127,11 +124,12 @@ def analyze_site(url):
     }
 
 if __name__ == "__main__":
-    urls = sys.argv[1:] if len(sys.argv) > 1 else [
-        "https://www.allstate.com",
-        "https://www.nationalgeneral.com",
-        "https://www.directauto.com"
-    ]
+    if len(sys.argv) < 2:
+        print("Usage: python3 detect_chatbot.py <url1> <url2> ...")
+        print("Example: python3 detect_chatbot.py https://example.com")
+        sys.exit(1)
+        
+    urls = sys.argv[1:]
     
     results = []
     for url in urls:
@@ -143,4 +141,5 @@ if __name__ == "__main__":
     print("\n" + "="*50)
     print("DETECTION RESULTS")
     print("="*50)
+    print(json.dumps(results, indent=2)) umps(results, indent=2)) 
     print(json.dumps(results, indent=2))
