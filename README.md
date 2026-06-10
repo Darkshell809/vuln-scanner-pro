@@ -60,6 +60,9 @@ python3 owasp_scanner.py -l targets.txt
 
 # Scan API from Postman collection
 python3 owasp_scanner.py -p collection.json --deep
+
+# You can even combine a list of IPs, a single URL, and a Postman collection all at once
+python3 owasp_scanner.py -l targets.txt -u example.com -p collection.json --deep
 ```
 
 ## Disclaimer
