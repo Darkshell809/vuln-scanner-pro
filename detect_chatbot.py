@@ -141,5 +141,4 @@ if __name__ == "__main__":
     print("\n" + "="*50)
     print("DETECTION RESULTS")
     print("="*50)
-    print(json.dumps(results, indent=2)) umps(results, indent=2)) 
     print(json.dumps(results, indent=2))

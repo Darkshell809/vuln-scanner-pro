@@ -165,5 +165,4 @@ async def main():
     print(json.dumps(final_results, indent=2))
 
 if __name__ == "__main__":
-    asyncio.run(main()) f __name__ == "__main__":
     asyncio.run(main())
