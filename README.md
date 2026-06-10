@@ -25,7 +25,7 @@ Ensure you have the following tools installed on your system:
 ### Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/vuln-scanner-pro.git
+   git clone https://github.com/darkshell809/vuln-scanner-pro.git
    cd vuln-scanner-pro
    ```
 
