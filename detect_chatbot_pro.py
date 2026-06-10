@@ -33,9 +33,6 @@ SIGNATURES = {
     "LivePerson": {
         "patterns": ["lpsnmedia.net", "lptag.liveperson.net", "lpTag"],
     },
-    "Amazon Lex": {
-        "patterns": ["virtualassistant.allstate.com", "amazon-lex", "lex-web-ui"],
-    },
     "Salesforce": {
         "patterns": ["salesforceliveagent.com", "embeddedservice"],
         "elements": [".embeddedServiceHelpButton"],
@@ -148,11 +145,12 @@ async def detect_chatbot(url):
         return results
 
 async def main():
-    urls = sys.argv[1:] if len(sys.argv) > 1 else [
-        "https://www.allstate.com",
-        "https://www.nationalgeneral.com/claims",
-        "https://www.directauto.com/claims"
-    ]
+    if len(sys.argv) < 2:
+        print("Usage: python3 detect_chatbot_pro.py <url1> <url2> ...")
+        print("Example: python3 detect_chatbot_pro.py https://example.com")
+        sys.exit(1)
+        
+    urls = sys.argv[1:]
     
     final_results = []
     for url in urls:
@@ -167,4 +165,5 @@ async def main():
     print(json.dumps(final_results, indent=2))
 
 if __name__ == "__main__":
+    asyncio.run(main()) f __name__ == "__main__":
     asyncio.run(main())
