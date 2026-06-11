@@ -1,4 +1,4 @@
-# AI-Powered Vulnerability & Chatbot Scanner
+# Vulnerability Scanner & AI Chatbot Finder
 
 A collection of security tools for identifying AI chatbots and performing OWASP Top 10 vulnerability scans on domains, IPs, and Postman collections.
 
